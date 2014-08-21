@@ -13,31 +13,27 @@
 
 @interface ECTViewController ()
 
+
 @end
 
 @implementation ECTViewController
 
+NSDictionary *event;
 BOOL speechPaused = 0;
+NSString *testSentence;
+NSString *textValue;
+NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+NSMutableString *randomString;
+NSNumber *sentenceSpeed = 0;
 
 - (void)viewWillAppear:(BOOL)animated
 {
 
     [super viewWillAppear:animated];
     
+    // [[KeenClient sharedClient] addEvent:event toEventCollection:@"tab_views" error:nil];*/
     
-    
-    /*NSDictionary *event = [NSDictionary dictionaryWithObjectsAndKeys:@"first view", @"view_name", @"going to", @"action", nil];
-    NSDate *myDate = [NSDate date];
-    
-    NSLog(@"%@", event);
-    
-    KeenProperties *keenProperties = [[KeenProperties alloc] init];
-    keenProperties.timestamp = myDate;
-    [[KeenClient sharedClient] addEvent:event
-                     withKeenProperties:keenProperties
-                      toEventCollection:@"tab_views"
-                                  error:nil];*/
-
 }
 
 - (void)viewDidLoad
@@ -69,7 +65,47 @@ BOOL speechPaused = 0;
 
 }
 
+- (void)sentenceCollection {
+    
+    for (int i = 0; i < [letters length]; i++) {
+        
+        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length]) % [letters length]]];
+        
+    }
+    
+    // connection between all the applications that we build...
+    
+    event = [NSDictionary dictionartyWithObjectsAndKeys:@"sentence_id" : randomString, @"sentencd": textValue, @"speed": sentenceSpeed, @"user" : @{"id": @1234567890}];
+
+    NSLog(@"%@", event);
+    
+    NSError *error = nil;
+    
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:event options:NSJSONWritingPrettyPrinted error:&error];
+    
+    if ([jsonData length] > 0 && error == nil) {
+        
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"JSON String = %@", jsonString);
+        
+    } else if ([jsonData length] == 0 && error == nil) {
+        
+        NSLog(@"No data was returned...");
+        
+    } else if (error != nil) {
+        
+        NSLog(@"An error occured...");
+        
+    }
+    
+}
+
 - (IBAction)playPauseButtonPressed:(UIButton *)sender {
+    
+    textValue = [NSString stringWithFormat:@"%@", _textToSpeak.text];
+    
+    [self sentenceCollection];
     
     if (speechPaused == NO) {
         [self.playIt setTitle:@"Pause" forState:UIControlStateNormal];
