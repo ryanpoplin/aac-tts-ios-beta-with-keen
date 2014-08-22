@@ -12,7 +12,6 @@
 #import "KIOEventStore.h"
 
 @interface ECTViewController ()
-
 @end
 
 @implementation ECTViewController
@@ -25,13 +24,12 @@ NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ012345
 
 NSMutableString *randomString;
 NSNumber *sentenceSpeed = 0;
+NSString *sentenceId;
 
 - (void)viewWillAppear:(BOOL)animated
 {
 
     [super viewWillAppear:animated];
-    
-    // [[KeenClient sharedClient] addEvent:event toEventCollection:@"tab_views" error:nil];*/
     
 }
 
@@ -64,21 +62,52 @@ NSNumber *sentenceSpeed = 0;
 
 }
 
-- (void)sentenceCollection {
+-(NSString *) randomStringWithLength: (int) len {
     
-    for (int i = 0; i < [letters length]; i++) {
+    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    
+    for (int i = 0; i < len; i++) {
         
         [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length]) % [letters length]]];
-        
-    }
-
-    // sentence id...
-    // sentence...
-    // speed...
-    // user : id...
     
-    // custom...
-    event = [NSDictionary dictionaryWithObjectsAndKeys:@"second view", @"view_name", @"going to", @"action", nil];
+    }
+    
+    return randomString;
+
+}
+
+- (void)sentenceTimeStamper {
+
+    // make a timestamp when as soon as text is entered in the UITextView...
+    
+}
+
+- (void)timeStampEvent {
+    
+    // get the value of the timestamp from the current time and use that value as the value for the the speed key...
+    
+}
+
+- (void)sentenceCollection {
+        
+    sentenceId = [self randomStringWithLength:24];
+    
+    sentenceId = [NSString stringWithFormat:@"%@", sentenceId];
+    
+    event = @{
+                @"sentence_id" : sentenceId,
+                @"sentence" : textValue,
+                @"speed" : @20,
+                @"user" : @{
+                            @"id" : @"1234567890",
+                      },
+              };
+    
+    NSLog(@"%@", event);
+    
+    sentenceId = nil;
+    textValue = nil;
+    sentenceSpeed = 0;
     
 }
 
