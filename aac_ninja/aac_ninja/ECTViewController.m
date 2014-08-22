@@ -12,6 +12,7 @@
 #import "KIOEventStore.h"
 
 @interface ECTViewController ()
+
 @end
 
 @implementation ECTViewController
@@ -20,8 +21,6 @@ NSDictionary *event;
 BOOL speechPaused = 0;
 NSString *testSentence;
 NSString *textValue;
-NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-
 NSMutableString *randomString;
 int sentenceSpeed = 0;
 NSString *sentenceId;
@@ -41,7 +40,9 @@ NSDate *lastMagicMoment;
 {
     
     [super viewDidLoad];
-	       
+	   
+    // [_textToSpeak ];
+    
     _playIt.layer.cornerRadius = 10;
     _playIt.clipsToBounds = YES;
     _clearIt.layer.cornerRadius = 10;
@@ -97,6 +98,7 @@ NSDate *lastMagicMoment;
     
     timeOfNoMagic = [thisMagicMoment timeIntervalSinceDate:lastMagicMoment];
 
+    // add certain precisions later...
     sentenceSpeed = (int)timeOfNoMagic;
     
 }

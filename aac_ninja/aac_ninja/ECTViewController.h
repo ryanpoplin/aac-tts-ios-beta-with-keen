@@ -11,7 +11,7 @@
 
 @interface ECTViewController : UIViewController <AVSpeechSynthesizerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextView *textToSpeak;
+@property (strong, nonatomic) IBOutlet UITextView *textToSpeak;
 @property (weak, nonatomic) IBOutlet UIButton *clearIt;
 @property (weak, nonatomic) IBOutlet UIButton *playIt;
 @property (weak, nonatomic) IBOutlet UIButton *dataView;
