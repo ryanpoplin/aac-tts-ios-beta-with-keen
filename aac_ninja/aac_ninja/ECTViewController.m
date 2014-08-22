@@ -13,7 +13,6 @@
 
 @interface ECTViewController ()
 
-
 @end
 
 @implementation ECTViewController
@@ -72,32 +71,14 @@ NSNumber *sentenceSpeed = 0;
         [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length]) % [letters length]]];
         
     }
-    
-    // connection between all the applications that we build...
-    
-    event = [NSDictionary dictionartyWithObjectsAndKeys:@"sentence_id" : randomString, @"sentencd": textValue, @"speed": sentenceSpeed, @"user" : @{"id": @1234567890}];
 
-    NSLog(@"%@", event);
+    // sentence id...
+    // sentence...
+    // speed...
+    // user : id...
     
-    NSError *error = nil;
-    
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:event options:NSJSONWritingPrettyPrinted error:&error];
-    
-    if ([jsonData length] > 0 && error == nil) {
-        
-        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        
-        NSLog(@"JSON String = %@", jsonString);
-        
-    } else if ([jsonData length] == 0 && error == nil) {
-        
-        NSLog(@"No data was returned...");
-        
-    } else if (error != nil) {
-        
-        NSLog(@"An error occured...");
-        
-    }
+    // custom...
+    event = [NSDictionary dictionaryWithObjectsAndKeys:@"second view", @"view_name", @"going to", @"action", nil];
     
 }
 
