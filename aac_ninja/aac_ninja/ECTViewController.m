@@ -40,8 +40,8 @@ NSDate *lastMagicMoment;
 {
     
     [super viewDidLoad];
-	   
-    // [_textToSpeak ];
+	 
+    // add event listener for the UITextView text prop. val...
     
     _playIt.layer.cornerRadius = 10;
     _playIt.clipsToBounds = YES;
@@ -90,7 +90,7 @@ NSDate *lastMagicMoment;
     
 }
 
-- (void)timeStampEvent {
+- (int)timeStampEvent {
     
     NSDate *thisMagicMoment = [NSDate date];
     
@@ -100,6 +100,8 @@ NSDate *lastMagicMoment;
 
     // add certain precisions later...
     sentenceSpeed = (int)timeOfNoMagic;
+    
+    return sentenceSpeed;
     
 }
 
@@ -112,7 +114,7 @@ NSDate *lastMagicMoment;
     event = @{
                 @"sentenceid" : sentenceId,
                 @"sentence" : textValue,
-                @"speed" : [NSNumber numberWithInt:sentenceSpeed],
+                @"speed" : [NSNumber numberWithInt:[self timeStampEvent]],
                 @"user" : @{
                             @"id" : @"1234567890",
                       },
@@ -120,41 +122,60 @@ NSDate *lastMagicMoment;
     
     NSLog(@"%@", event);
     
-    sentenceId = nil;
-    textValue = nil;
-    sentenceSpeed = 0;
+    // add the keen.io serialization method and store...
+    
+    // upload to keen.io...
     
 }
 
+// create an event listener for the keyboard...
+// if the keyboard has been pressed and the UITextView Object is == 1, run timeStamper...
+
 - (IBAction)playPauseButtonPressed:(UIButton *)sender {
+    
+    // run timeStampEvent...
     
     textValue = [NSString stringWithFormat:@"%@", _textToSpeak.text];
     
     [self sentenceCollection];
     
+    event = nil;
+    sentenceId = nil;
+    textValue = nil;
+    sentenceSpeed = 0;
+    
     if (speechPaused == NO) {
+    
         [self.playIt setTitle:@"Pause" forState:UIControlStateNormal];
         [self.synthesizer continueSpeaking];
         speechPaused = YES;
+    
     } else {
+        
         [self.playIt setTitle:@"Speak" forState:UIControlStateNormal];
         speechPaused = NO;
         [self.synthesizer pauseSpeakingAtBoundary:AVSpeechBoundaryImmediate];
+    
     }
+    
     if (self.synthesizer.speaking == NO) {
+    
         AVSpeechUtterance *utterance = [[AVSpeechUtterance alloc] initWithString:self.textToSpeak.text];
         utterance.rate = 0.2;
         utterance.pitchMultiplier = 1.0;
-        utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-GB"];
+        utterance.voice = [AVSpeechSynthesisVoice voiceWithLanguage:@"en-US"];
         [self.synthesizer speakUtterance:utterance];
+    
     }
         
 }
 
 -(void)speechSynthesizer:(AVSpeechSynthesizer *)synthesizer didFinishSpeechUtterance:(AVSpeechUtterance *)utterance {
+
     [self.playIt setTitle:@"Speak" forState:UIControlStateNormal];
     speechPaused = NO;
     NSLog(@"Playback finished");
+
 }
 
 - (IBAction)clearIt:(UIButton *)sender {
