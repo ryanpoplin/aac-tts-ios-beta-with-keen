@@ -136,15 +136,12 @@ NSDate *lastMagicMoment;
               };
     
     NSLog(@"%@", event);
-    
-    // add the keen.io serialization method and store...
-    
-    // upload to keen.io...
+
+    [[KeenClient sharedClient] addEvent:event toEventCollection:@"sentence_spoken" error:nil];
+
+    [[KeenClient sharedClient] uploadWithFinishedBlock:^(void) { }];
     
 }
-
-// create an event listener for the keyboard...
-// if the keyboard has been pressed and the UITextView Object is == 1, run timeStamper...
 
 - (IBAction)playPauseButtonPressed:(UIButton *)sender {
     
