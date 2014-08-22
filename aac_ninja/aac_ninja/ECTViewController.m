@@ -13,6 +13,8 @@
 
 @interface ECTViewController ()
 
+@property (strong, nonatomic) IBOutlet UITextView *textToSpeak;
+
 @end
 
 @implementation ECTViewController
@@ -40,8 +42,8 @@ NSDate *lastMagicMoment;
 {
     
     [super viewDidLoad];
-	 
-    // add event listener for the UITextView text prop. val...
+    
+    _textToSpeak.delegate = self;
     
     _playIt.layer.cornerRadius = 10;
     _playIt.clipsToBounds = YES;
@@ -63,6 +65,20 @@ NSDate *lastMagicMoment;
 {
     
     [super didReceiveMemoryWarning];
+
+}
+
+- (void)textViewDidChange:(UITextView *)textView{
+
+    if ([_textToSpeak.text length] == 1) {
+        
+        [self sentenceTimeStamper];
+        
+    } else {
+        
+        NSLog(@"Key Pressed...");
+        
+    }
 
 }
 
@@ -98,7 +114,6 @@ NSDate *lastMagicMoment;
     
     timeOfNoMagic = [thisMagicMoment timeIntervalSinceDate:lastMagicMoment];
 
-    // add certain precisions later...
     sentenceSpeed = (int)timeOfNoMagic;
     
     return sentenceSpeed;
@@ -133,7 +148,7 @@ NSDate *lastMagicMoment;
 
 - (IBAction)playPauseButtonPressed:(UIButton *)sender {
     
-    // run timeStampEvent...
+    [self timeStampEvent];
     
     textValue = [NSString stringWithFormat:@"%@", _textToSpeak.text];
     

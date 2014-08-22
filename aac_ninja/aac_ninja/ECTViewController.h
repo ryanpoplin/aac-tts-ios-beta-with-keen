@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ECTViewController : UIViewController <AVSpeechSynthesizerDelegate>
+@interface ECTViewController : UIViewController <AVSpeechSynthesizerDelegate, UITextViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextView *textToSpeak;
 @property (weak, nonatomic) IBOutlet UIButton *clearIt;
 @property (weak, nonatomic) IBOutlet UIButton *playIt;
 @property (weak, nonatomic) IBOutlet UIButton *dataView;
