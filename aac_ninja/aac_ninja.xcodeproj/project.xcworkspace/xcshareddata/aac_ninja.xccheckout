@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>E39BDBF9-5A17-400A-8AEC-991A6B987180</string>
+	<key>IDESourceControlProjectName</key>
+	<string>aac_ninja</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CCCB3889A456A45C102BCEC0B8F110F79FDF3D2F</key>
+		<string>github.com:ryanpoplin/aac-tts-ios-beta-with-keen.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>aac_ninja/aac_ninja.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CCCB3889A456A45C102BCEC0B8F110F79FDF3D2F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:ryanpoplin/aac-tts-ios-beta-with-keen.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CCCB3889A456A45C102BCEC0B8F110F79FDF3D2F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CCCB3889A456A45C102BCEC0B8F110F79FDF3D2F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>aac_ninja</string>
+		</dict>
+	</array>
+</dict>
+</plist>

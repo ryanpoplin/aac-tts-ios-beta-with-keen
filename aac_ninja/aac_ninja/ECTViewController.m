@@ -23,8 +23,11 @@ NSString *textValue;
 NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
 NSMutableString *randomString;
-NSNumber *sentenceSpeed = 0;
+int sentenceSpeed = 0;
 NSString *sentenceId;
+NSDate *thisMagicMoment;
+NSTimeInterval timeOfNoMagic;
+NSDate *lastMagicMoment;
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -62,42 +65,52 @@ NSString *sentenceId;
 
 }
 
--(NSString *) randomStringWithLength: (int) len {
+-(NSString *)generateRandomString: (int) num {
     
-    NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
+    NSMutableString* string = [NSMutableString stringWithCapacity:num];
     
-    for (int i = 0; i < len; i++) {
-        
-        [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length]) % [letters length]]];
+    for (int i = 0; i < num; i++) {
     
+        [string appendFormat:@"%C", (unichar)('a' + arc4random_uniform(25))];
+
     }
     
-    return randomString;
+    return string;
 
 }
 
 - (void)sentenceTimeStamper {
 
-    // make a timestamp when as soon as text is entered in the UITextView...
+    thisMagicMoment = [NSDate date];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:thisMagicMoment forKey:@"lastMagicMoment"];
+    
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 
 - (void)timeStampEvent {
     
-    // get the value of the timestamp from the current time and use that value as the value for the the speed key...
+    NSDate *thisMagicMoment = [NSDate date];
+    
+    lastMagicMoment = (NSDate *)[[NSUserDefaults standardUserDefaults] objectForKey:@"lastMagicMoment"];
+    
+    timeOfNoMagic = [thisMagicMoment timeIntervalSinceDate:lastMagicMoment];
+
+    sentenceSpeed = (int)timeOfNoMagic;
     
 }
 
 - (void)sentenceCollection {
         
-    sentenceId = [self randomStringWithLength:24];
+    sentenceId = [self generateRandomString:20];
     
     sentenceId = [NSString stringWithFormat:@"%@", sentenceId];
     
     event = @{
-                @"sentence_id" : sentenceId,
+                @"sentenceid" : sentenceId,
                 @"sentence" : textValue,
-                @"speed" : @20,
+                @"speed" : [NSNumber numberWithInt:sentenceSpeed],
                 @"user" : @{
                             @"id" : @"1234567890",
                       },
