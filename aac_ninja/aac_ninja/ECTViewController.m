@@ -74,10 +74,6 @@ NSDate *lastMagicMoment;
         
         [self sentenceTimeStamper];
         
-    } else {
-        
-        NSLog(@"Key Pressed...");
-        
     }
 
 }
@@ -135,8 +131,6 @@ NSDate *lastMagicMoment;
                       },
               };
     
-    NSLog(@"%@", event);
-
     [[KeenClient sharedClient] addEvent:event toEventCollection:@"sentence_spoken" error:nil];
 
     [[KeenClient sharedClient] uploadWithFinishedBlock:^(void) { }];
@@ -193,12 +187,17 @@ NSDate *lastMagicMoment;
 - (IBAction)clearIt:(UIButton *)sender {
         
     self.textToSpeak.text = @"";
-        
+    
+    event = nil;
+    sentenceId = nil;
+    textValue = nil;
+    sentenceSpeed = 0;
+    
 }
 
 - (IBAction)dataView:(UIButton *)sender {
     
-    //...
+    
     
 }
 
