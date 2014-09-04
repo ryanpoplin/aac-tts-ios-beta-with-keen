@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A11E65319B79D1C006E4951 /* ECTAacData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A11E65219B79D1C006E4951 /* ECTAacData.m */; };
 		5A6ED8C019A1C60E00A44C3B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6ED8BF19A1C60E00A44C3B /* Foundation.framework */; };
 		5A6ED8C219A1C60E00A44C3B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6ED8C119A1C60E00A44C3B /* CoreGraphics.framework */; };
 		5A6ED8C419A1C60E00A44C3B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A6ED8C319A1C60E00A44C3B /* UIKit.framework */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A11E65119B79D1C006E4951 /* ECTAacData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTAacData.h; sourceTree = "<group>"; };
+		5A11E65219B79D1C006E4951 /* ECTAacData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTAacData.m; sourceTree = "<group>"; };
 		5A6ED8BC19A1C60E00A44C3B /* aac_ninja.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aac_ninja.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6ED8BF19A1C60E00A44C3B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5A6ED8C119A1C60E00A44C3B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -96,6 +99,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A11E65419B7AED9006E4951 /* aacDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				5A11E65119B79D1C006E4951 /* ECTAacData.h */,
+				5A11E65219B79D1C006E4951 /* ECTAacData.m */,
+			);
+			name = aacDataModel;
+			sourceTree = "<group>";
+		};
+		5A11E65519B7AEEB006E4951 /* aacViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A6ED8D719A1C60E00A44C3B /* ECTViewController.h */,
+				5A6ED8D819A1C60E00A44C3B /* ECTViewController.m */,
+			);
+			name = aacViewController;
+			sourceTree = "<group>";
+		};
+		5A11E65619B7AEFE006E4951 /* aacWebDataViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5A6ED8F919A1CA5500A44C3B /* ECTDataViewViewController.h */,
+				5A6ED8FA19A1CA5500A44C3B /* ECTDataViewViewController.m */,
+			);
+			name = aacWebDataViewController;
+			sourceTree = "<group>";
+		};
+		5A11E65719B7AF24006E4951 /* aacNinjaDelegation */ = {
+			isa = PBXGroup;
+			children = (
+				5A6ED8CE19A1C60E00A44C3B /* ECTAppDelegate.h */,
+				5A6ED8CF19A1C60E00A44C3B /* ECTAppDelegate.m */,
+			);
+			name = aacNinjaDelegation;
+			sourceTree = "<group>";
+		};
+		5A11E65819B7AF6B006E4951 /* storyBoards */ = {
+			isa = PBXGroup;
+			children = (
+				5A6ED8D119A1C60E00A44C3B /* Main_iPhone.storyboard */,
+				5A6ED8D419A1C60E00A44C3B /* Main_iPad.storyboard */,
+			);
+			name = storyBoards;
+			sourceTree = "<group>";
+		};
 		5A6ED8B319A1C60E00A44C3B = {
 			isa = PBXGroup;
 			children = (
@@ -132,14 +180,11 @@
 			isa = PBXGroup;
 			children = (
 				5A6ED8FC19A247FF00A44C3B /* KeenClient */,
-				5A6ED8CE19A1C60E00A44C3B /* ECTAppDelegate.h */,
-				5A6ED8CF19A1C60E00A44C3B /* ECTAppDelegate.m */,
-				5A6ED8D119A1C60E00A44C3B /* Main_iPhone.storyboard */,
-				5A6ED8D419A1C60E00A44C3B /* Main_iPad.storyboard */,
-				5A6ED8D719A1C60E00A44C3B /* ECTViewController.h */,
-				5A6ED8D819A1C60E00A44C3B /* ECTViewController.m */,
-				5A6ED8F919A1CA5500A44C3B /* ECTDataViewViewController.h */,
-				5A6ED8FA19A1CA5500A44C3B /* ECTDataViewViewController.m */,
+				5A11E65819B7AF6B006E4951 /* storyBoards */,
+				5A11E65719B7AF24006E4951 /* aacNinjaDelegation */,
+				5A11E65519B7AEEB006E4951 /* aacViewController */,
+				5A11E65419B7AED9006E4951 /* aacDataModel */,
+				5A11E65619B7AEFE006E4951 /* aacWebDataViewController */,
 				5A6ED8DA19A1C60E00A44C3B /* Images.xcassets */,
 				5A6ED8C619A1C60E00A44C3B /* Supporting Files */,
 			);
@@ -286,6 +331,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A11E65319B79D1C006E4951 /* ECTAacData.m in Sources */,
 				5A6ED8D919A1C60E00A44C3B /* ECTViewController.m in Sources */,
 				5A6ED8CC19A1C60E00A44C3B /* main.m in Sources */,
 				5A6ED8FB19A1CA5500A44C3B /* ECTDataViewViewController.m in Sources */,
@@ -427,6 +473,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "aac_ninja/aac_ninja-Prefix.pch";
 				INFOPLIST_FILE = "aac_ninja/aac_ninja-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/byrdannfox/Downloads/KeenClient,
@@ -445,6 +492,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "aac_ninja/aac_ninja-Prefix.pch";
 				INFOPLIST_FILE = "aac_ninja/aac_ninja-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/byrdannfox/Downloads/KeenClient,

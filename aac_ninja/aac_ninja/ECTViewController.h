@@ -11,6 +11,11 @@
 
 @interface ECTViewController : UIViewController <AVSpeechSynthesizerDelegate, UITextViewDelegate>
 
+{
+    BOOL _speechPaused;
+    NSString *_textValue;
+}
+
 @property (weak, nonatomic) IBOutlet UIButton *clearIt;
 @property (weak, nonatomic) IBOutlet UIButton *playIt;
 @property (weak, nonatomic) IBOutlet UIButton *dataView;
