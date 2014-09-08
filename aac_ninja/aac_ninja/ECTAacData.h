@@ -19,6 +19,14 @@
 
 // add ivars with inside of the {}...
 
+/*
+ 
+ configure standards compliant data models for the speech apps to follow along to. 
+ 
+ these standards compliant features will be
+ 
+*/
+
 {
     
     // * === a pointer to an object in memory...

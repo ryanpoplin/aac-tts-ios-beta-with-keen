@@ -16,8 +16,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [KeenClient sharedClientWithProjectId:@"53f4a09a709a390e41000000"
-                              andWriteKey:@"b00ebbc01c247b411bb7510ca8eacc2e7408712693752fbd2da88305415e2a0783171b39bc796d18ca9fdedabbabd65978d77e5d4297017dd119d7ef1922fae8ca6d6dca7ff372e107232b26931229d4158d0615ffc352204d674136aba1d2e3127d7cd4987e126b38868ac7d3e94441" andReadKey:@"e1595e820d5c30f2e22d35b0b371b3c2d312cffec5acead9d32006989d6a999e34607f991f2826108dfb17eafc7bead3ad31f7e63cccd8caa1d569ffb75812b6b51a233c7dab73f261ac06885a607d5e3b974052d3230dd78159422bef51eef74bc00f7193d2d645ff25dbb653897815"];
+    [KeenClient sharedClientWithProjectId:@"540887470727195d34000003"
+                              andWriteKey:@"1047d03d458b2b30a5896f02cd80a7c5dd8221ba293c6eb89e339da03d2bca3c5d3538bbe2396853e07f9b258c5f2a02056f01f91d779318ca08861e60c00af46982830f8bf0357e2f7bfd72735e9803036b8b9c7a6802e272b873401373a85c21dc3405d5d8ae3b21f2fde2574394cc" andReadKey:@"7834d59d5623311155cdc7c61839951928d64ccc763c8453092b0cccc40385efb9e719c69fd6449004f0d767dc641ee8cd9af693e84f3f2cbb807ac1907b0b4f20c7976116a44fe908f5eebd31db0f92f99f3803d1fb6a03ea079fc4f09cf50bf4c63a159d5dcab8920c3974531fe1c7"];
     
     // Override point for customization after application launch.
     

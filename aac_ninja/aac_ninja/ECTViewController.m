@@ -6,6 +6,19 @@
 //  Copyright (c) 2014 ExcepApps, Inc. All rights reserved.
 //
 
+/* TO BE REPLACED BY ACAPELLA'S TTS ENGINE? */
+
+/*
+ 
+ - 
+ -
+ -
+ -
+ -
+ -
+ 
+*/
+
 #import "ECTViewController.h"
 #import "KeenClient.h"
 #import "KeenProperties.h"
@@ -75,15 +88,15 @@ NSDate *lastMagicMoment;
         NSString *testString;
         testString = [dataItems objectAtIndex:i];
         // items value is changed and logged at each iteration...
-        NSLog(@"%@", testString);
+        // NSLog(@"%@", testString);
     }
     /*for (int i = 0; i < 3; i++) {
         // NSLog(@"%d", i);
     }*/
-    for (NSString *item in dataItems) {
-        NSString *testings = item;
-        NSLog(@"%@", testings);
-    }
+    /*for (NSString *item in dataItems) {
+        // NSString *testings = item;
+        // NSLog(@"%@", testings);
+    }*/
     dataItems = nil;
     /* TEST CODE... */
     
