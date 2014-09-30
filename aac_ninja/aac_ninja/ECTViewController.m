@@ -6,19 +6,6 @@
 //  Copyright (c) 2014 ExcepApps, Inc. All rights reserved.
 //
 
-/* TO BE REPLACED BY ACAPELLA'S TTS ENGINE? */
-
-/*
- 
- - 
- -
- -
- -
- -
- -
- 
-*/
-
 #import "ECTViewController.h"
 #import "KeenClient.h"
 #import "KeenProperties.h"
@@ -122,7 +109,7 @@ NSDate *lastMagicMoment;
 
 -(NSString *)generateRandomString: (int) num {
     
-    NSMutableString* string = [NSMutableString stringWithCapacity:num];
+    NSMutableString *string = [NSMutableString stringWithCapacity:num];
     
     for (int i = 0; i < num; i++) {
         

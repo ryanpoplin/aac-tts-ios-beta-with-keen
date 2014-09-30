@@ -16,8 +16,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
-    [KeenClient sharedClientWithProjectId:@"540887470727195d34000003"
-                              andWriteKey:@"1047d03d458b2b30a5896f02cd80a7c5dd8221ba293c6eb89e339da03d2bca3c5d3538bbe2396853e07f9b258c5f2a02056f01f91d779318ca08861e60c00af46982830f8bf0357e2f7bfd72735e9803036b8b9c7a6802e272b873401373a85c21dc3405d5d8ae3b21f2fde2574394cc" andReadKey:@"7834d59d5623311155cdc7c61839951928d64ccc763c8453092b0cccc40385efb9e719c69fd6449004f0d767dc641ee8cd9af693e84f3f2cbb807ac1907b0b4f20c7976116a44fe908f5eebd31db0f92f99f3803d1fb6a03ea079fc4f09cf50bf4c63a159d5dcab8920c3974531fe1c7"];
+    // is this for all data from let's say 100,000 users' account...
+    
+    // config seperation between KEEN>JS and KEEN>IO iOS SDK...
+    
+    [KeenClient sharedClientWithProjectId:@"542ab1913831443346b5a518"
+                              andWriteKey:@"698ae07fcb46b7cfb4925c1410452ce402a4423ec00b5001d3103d2923cf3426c7d6329f930c74a2f8edcf69ad75cf3fa011def2d5f3129b165bff8b83c5a75e80cb7206007d243b9e251fdb50a0dd2f25c181633250ac60745e58d9a500188830992a64950f642b83687e3bf3df6931" andReadKey:@"8e2caa8e2ef74affbd668d861dd10bad0636fd498adbf40d32583f11b1d8cf4bd1548ca44b9168da342573872d75d2dee7466c567546e68fff41e5718ba6b1d80fc514b2618374fe3a63c1c7234c8f35abd4c4ea647197c659d366335513bba321cff5c3004aec4c3070ea346b2a98fc"];
     
     // Override point for customization after application launch.
     
