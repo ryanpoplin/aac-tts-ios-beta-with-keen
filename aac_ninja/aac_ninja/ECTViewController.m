@@ -42,6 +42,10 @@ NSDate *lastMagicMoment;
     
     [super viewDidLoad];
     
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    
+    [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
+    
     _speechPaused = 0;
     
     _textToSpeak.delegate = self;
