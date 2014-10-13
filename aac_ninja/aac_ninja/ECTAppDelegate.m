@@ -20,8 +20,8 @@
     
     // config seperation between KEEN>JS and KEEN>IO iOS SDK...
     
-    [KeenClient sharedClientWithProjectId:@"542d9ea40727193a192dec9e"
-                              andWriteKey:@"dc80f3a1f7d68c9396c1a6be2f5daa082a41ac6b0c67ef5850e02e93bf3626cf2731c7369bcf224fb0ddc2d552b053dce5d5e3dba755aefa0da14f90ac95df57c66c5568277676c549681612dd13d2ccf2bbbafb5bd52709ced7f45afe9bfc94d611c638df3401f5555d56c071fc0f66" andReadKey:@"4ca8b097d15e0d9461b8eb21966ab18b771bb98c372881e87caa2613a4c3d70c3dc360940a96c535714881ae4abd671b809a18ff0f776d82e9f71b832759e377565d3b4d39c5d83535ec9a8212c33a049542e9924502887144d3d6ac4dd72ed9edbe2b7cf7b6f98e8576446a55cd9ef4"];
+    [KeenClient sharedClientWithProjectId:@"543aaec780a7bd5b1465bb83"
+                              andWriteKey:@"9a6bdeeb494beba9d8484c86f1db10f856bdd99b59e8a9949dd0c07e08e87a881ed7590ed8adcf715eadaf2c320353319daecfe3bcd17d84ea95cdb65afe4dec2ae802bf5098d932e770220088eab6c507721f9d76c4167d02b52d21c0ed78fec0f0932b8b8b2e8cd062b14880bb5890" andReadKey:@"e3fd44035bacb9641500f310ab6f19d08688030e13d0ce377b55248298c156a3abf6ac46e457bba6fea26b211ce7fb25f72c4ccb489ed8b6271a251be04e12e89790016c01ff63087497cc0a3affee38b7d1383a84bc621080df6f6b23e18a6e893e812faca475b5d0ac1aeca65a273a"];
     
     // Override point for customization after application launch.
     

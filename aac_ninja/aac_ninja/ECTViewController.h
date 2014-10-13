@@ -14,6 +14,7 @@
 {
     BOOL _speechPaused;
     NSString *_textValue;
+    NSString *_textLength;
 }
 
 @property (weak, nonatomic) IBOutlet UIButton *clearIt;

@@ -19,6 +19,7 @@
 
 @implementation ECTViewController
 
+int sentenceWordCount = 0;
 NSDictionary *event;
 NSString *testSentence;
 NSMutableString *randomString;
@@ -40,6 +41,8 @@ NSDate *lastMagicMoment;
 
 {
     
+    sentenceWordCount = 1;
+    
     [super viewDidLoad];
     
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
@@ -54,6 +57,7 @@ NSDate *lastMagicMoment;
     _playIt.clipsToBounds = YES;
     _clearIt.layer.cornerRadius = 10;
     _clearIt.clipsToBounds = YES;
+    _dataView.hidden = YES;
     _dataView.layer.cornerRadius = 10;
     _dataView.clipsToBounds = YES;
     
@@ -111,6 +115,20 @@ NSDate *lastMagicMoment;
     
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range
+ replacementText:(NSString *)text
+{
+
+    if ([text isEqualToString:@" "]) {
+    
+        sentenceWordCount++;
+    
+    }
+    
+    return TRUE;
+
+}
+
 -(NSString *)generateRandomString: (int) num {
     
     NSMutableString *string = [NSMutableString stringWithCapacity:num];
@@ -155,11 +173,12 @@ NSDate *lastMagicMoment;
     
     sentenceId = [NSString stringWithFormat:@"%@", sentenceId];
     
-    // create custom classes for the data models...
+    NSLog(@"%lu", (unsigned long)sentenceWordCount);
     
     event = @{
               @"sentenceid" : sentenceId,
               @"sentence" : _textValue,
+              @"length" : [NSNumber numberWithInt:sentenceWordCount],
               @"speed" : [NSNumber numberWithInt:[self timeStampEvent]],
               @"user" : @{
                       @"id" : @"1234567890",
@@ -180,6 +199,7 @@ NSDate *lastMagicMoment;
     
     [self sentenceCollection];
     
+    sentenceWordCount = 1;
     event = nil;
     sentenceId = nil;
     _textValue = nil;
